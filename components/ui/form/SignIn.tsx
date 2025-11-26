@@ -1,12 +1,13 @@
 "use client";
 
 import { ReactEventHandler, useState } from "react"
-import { signIn } from "@/lib/auth-client";
-import { useRouter } from "next/navigation";
+import { signIn } from "@/lib/auth-client"
+import { useRouter } from "next/navigation"
 import Link from "next/link"
-import Spinner from "../Spinner/Spinner";
-import Error from "../error/Error";
-
+import Spinner from "../Spinner/Spinner"
+import Error from "../error/Error"
+import Image from "next/image";
+import Providers from "./Providers";
 
 const SignIn = () => {
 
@@ -51,6 +52,11 @@ const SignIn = () => {
         <h1 className="text-3xl font-bold text-gray-900">Sign in to Rankify.</h1>
         <p className="text-gray-600 mt-2">Welcome back! Please sign in to continue</p>
       </div>
+
+      <div className="flex flex-col items-center">
+        <Providers/>
+      </div>
+      
       <p className="text-center">OR</p>
 
       {error && (

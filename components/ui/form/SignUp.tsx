@@ -2,9 +2,10 @@
 
 import { ReactEventHandler, useState } from "react"
 import { signUp } from "@/lib/auth-client"
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"
 import Link from "next/link"
-import Spinner from "../Spinner/Spinner";
+import Spinner from "../Spinner/Spinner"
+import Providers from "./Providers"
 
 
 const SignUp = () => {
@@ -52,6 +53,11 @@ const SignUp = () => {
         <h1 className="text-3xl font-bold text-gray-900">Sign up to Rankify.</h1>
         <p className="text-gray-600 mt-2">Get started with your account</p>
       </div>
+
+      <div className="flex flex-col items-center">
+        <Providers/>
+      </div>
+
       <p className="text-center">OR</p>
 
       {error && (
@@ -107,7 +113,7 @@ const SignUp = () => {
         >
           {loading ?  (<Spinner/>) : "Create Account"}
         </button>
-        <p className="text-center text-gray-600">Don't have an account? <Link href={`/sign-in`} className="text-black">Sign Up</Link> </p>
+        <p className="text-center text-gray-600">Don't have an account? <Link href={`/sign-in`} className="text-black">Sign In</Link> </p>
       </div>
     </div>
   )
